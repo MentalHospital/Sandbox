@@ -1,0 +1,73 @@
+﻿#pragma kernel CSMain
+
+struct Planet
+{
+    float3 position;
+    float mass;
+    float3 velocity;
+    float3 color;
+    int isEnabled;
+    int collided;
+};
+
+RWStructuredBuffer<Planet> planets;
+
+float dTime;
+float G;
+uint numPlanets;
+
+[numthreads(10, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    uint current = id.x;
+    if (planets[current].isEnabled == 1)
+    {
+        float3 force = float3(0.0, 0.0, 0.0);
+        planets[current].collided = 0;
+        for (uint other = 0; other < numPlanets; other++)
+        {
+            if (current != other && planets[current].isEnabled && planets[other].isEnabled)
+            {
+                float3 offset = planets[other].position - planets[current].position;
+                float sqrDistance = offset.x * offset.x + offset.y * offset.y + offset.z * offset.z;
+                if (sqrDistance > 0.01)
+                {
+                    force += offset * (G * planets[current].mass * planets[other].mass / (sqrDistance * sqrt(sqrDistance)));
+                    if (sqrDistance < 4.0 && planets[current].collided == 0 && planets[other].collided == 0)
+                    {
+                        planets[current].collided = 1;
+                        planets[other].collided = 1;
+                        if (planets[current].mass > planets[other].mass)
+                        {
+                            planets[other].isEnabled = 0;
+                            planets[current].velocity = (planets[current].velocity * planets[current].mass + planets[other].velocity * planets[other].mass) / (planets[current].mass + planets[other].mass);
+                            planets[current].mass += planets[other].mass;
+                            planets[other].mass = 0;
+                            planets[other].velocity = float3(0, 0, 0);
+                        }
+                        else
+                        {
+                            planets[current].isEnabled = 0;
+                            planets[other].velocity = (planets[current].velocity * planets[current].mass + planets[other].velocity * planets[other].mass) / (planets[current].mass + planets[other].mass);
+                            planets[other].mass += planets[current].mass;
+                            planets[current].mass = 0;
+                            planets[current].velocity = float3(0, 0, 0);
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (planets[current].isEnabled == 1)
+        {
+            float3 acc = force / planets[current].mass;
+            planets[current].position = planets[current].position + planets[current].velocity * dTime + acc * dTime * dTime * 0.5;
+            planets[current].velocity = planets[current].velocity + acc * dTime;
+
+            float clampedFrac = clamp((planets[current].mass - 5.0) / 1000.0, 0, 1);
+            float clampedFracB = clamp((planets[current].mass - 5.0) / 25000.0, 0, 1);
+            planets[current].color = float3(clampedFrac, clampedFracB, 1 - clampedFrac + clampedFracB);
+        }
+    }
+}

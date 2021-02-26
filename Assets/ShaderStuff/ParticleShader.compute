@@ -1,0 +1,77 @@
+﻿#pragma kernel CSMain
+
+struct Particle
+{
+    int2 position;
+    int type;
+};
+
+int width;
+int height;
+
+RWStructuredBuffer<Particle> particles;
+RWStructuredBuffer<Particle> newParticles;
+
+bool CheckNeighbor(int x, int y, int dx, int dy)
+{
+    int neighborIndex = (y + dy) * width + (x + dx);
+    if (x + dx > 0 && x + dx < width - 1 && y + dy > 0 && y + dy < height - 1)
+    {
+        return (particles[neighborIndex].type != 0);
+    }
+    else if (x + dx <= 0 || x + dx >= width - 1 || y + dy <= 0)
+    {
+        return true;
+    }
+    else if (y + dy >= height - 1)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+[numthreads(16,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    Particle particle;
+    particle = particles[id.x];
+    if (particle.type != 0)
+    {
+        if (!CheckNeighbor(particle.position.x, particle.position.y, 0, -1))
+        {
+            particle.position = int2(particle.position.x, particle.position.y - 1);
+            newParticles[(particle.position.y - 1) * width + particle.position.x] = particle;
+        }
+        else
+        {
+            if (!CheckNeighbor(particle.position.x, particle.position.y, 0, 1))
+            {
+                if (!CheckNeighbor(particle.position.x, particle.position.y, -1, -1))
+                {
+                    particle.position = int2(particle.position.x - 1, particle.position.y - 1);
+                    newParticles[(particle.position.y - 1) * width + particle.position.x - 1] = particle;
+                }
+                else if (!CheckNeighbor(particle.position.x, particle.position.y, 1, -1))
+                {
+                    particle.position = int2(particle.position.x + 1, particle.position.y - 1);
+                        newParticles[(particle.position.y - 1) * width + particle.position.x + 1] = particle;
+                }
+                else
+                {
+                    newParticles[id.x] = particle;
+                }
+            }
+            else
+            {
+                newParticles[id.x] = particle;
+            }
+        }
+    }
+    else
+    {
+        newParticles[id.x] = particle;
+    }
+}
