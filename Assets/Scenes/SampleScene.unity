@@ -250,6 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 25327875}
   - component: {fileID: 25327876}
+  - component: {fileID: 25327877}
   m_Layer: 5
   m_Name: MinSpeed Slider
   m_TagString: Untagged
@@ -331,6 +332,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &25327877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25327874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c00720ddd717004e82b05852a839b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValueMesh: {fileID: 473219190}
+  slider: {fileID: 25327876}
 --- !u!1 &29033330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,7 +1478,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1447469488}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -2714,6 +2729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782146774}
   - component: {fileID: 782146775}
+  - component: {fileID: 782146776}
   m_Layer: 5
   m_Name: Height Slider
   m_TagString: Untagged
@@ -2735,8 +2751,8 @@ RectTransform:
   - {fileID: 402361696}
   - {fileID: 501835063}
   - {fileID: 564064929}
-  - {fileID: 1909714045}
   - {fileID: 1684681862}
+  - {fileID: 1909714045}
   m_Father: {fileID: 503402829}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2795,6 +2811,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &782146776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782146773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c00720ddd717004e82b05852a839b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValueMesh: {fileID: 1909714046}
+  slider: {fileID: 782146775}
 --- !u!1 &909911381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,6 +2909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 915362326}
   - component: {fileID: 915362327}
+  - component: {fileID: 915362328}
   m_Layer: 5
   m_Name: Width Slider
   m_TagString: Untagged
@@ -2960,6 +2991,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &915362328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915362325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c00720ddd717004e82b05852a839b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValueMesh: {fileID: 1575394035}
+  slider: {fileID: 915362327}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,6 +3261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1002983056}
   - component: {fileID: 1002983057}
+  - component: {fileID: 1002983058}
   m_Layer: 5
   m_Name: MinMass Slider
   m_TagString: Untagged
@@ -3297,6 +3343,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1002983058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002983055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c00720ddd717004e82b05852a839b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValueMesh: {fileID: 472350480}
+  slider: {fileID: 1002983057}
 --- !u!1 &1009937796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,6 +3911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1194736796}
   - component: {fileID: 1194736797}
+  - component: {fileID: 1194736798}
   m_Layer: 5
   m_Name: MaxMass Slider
   m_TagString: Untagged
@@ -3932,6 +3993,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1194736798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194736795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c00720ddd717004e82b05852a839b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValueMesh: {fileID: 1039031508}
+  slider: {fileID: 1194736797}
 --- !u!1 &1199405606
 GameObject:
   m_ObjectHideFlags: 0
@@ -4603,6 +4678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1398810714}
   - component: {fileID: 1398810715}
+  - component: {fileID: 1398810716}
   m_Layer: 5
   m_Name: MaxSpeed Slider
   m_TagString: Untagged
@@ -4684,6 +4760,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1398810716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398810713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c00720ddd717004e82b05852a839b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValueMesh: {fileID: 1345960933}
+  slider: {fileID: 1398810715}
 --- !u!1 &1405150021
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,7 +4960,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1447469488}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -5006,6 +5096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1447469488}
   - component: {fileID: 1447469489}
+  - component: {fileID: 1447469490}
   m_Layer: 5
   m_Name: Depth Slider
   m_TagString: Untagged
@@ -5027,8 +5118,8 @@ RectTransform:
   - {fileID: 1918201327}
   - {fileID: 29033331}
   - {fileID: 140917125}
-  - {fileID: 435498116}
   - {fileID: 1413613467}
+  - {fileID: 435498116}
   m_Father: {fileID: 503402829}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5087,6 +5178,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1447469490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447469487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c00720ddd717004e82b05852a839b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderValueMesh: {fileID: 435498117}
+  slider: {fileID: 1447469489}
 --- !u!1 &1491573542
 GameObject:
   m_ObjectHideFlags: 0
@@ -5532,7 +5637,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 782146774}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -5740,21 +5845,16 @@ MonoBehaviour:
   generateButton: {fileID: 20595229}
   clearButton: {fileID: 1802286478}
   sphericalToggle: {fileID: 2000531900}
-  widthSlider: {fileID: 915362327}
-  heightSlider: {fileID: 782146775}
-  depthSlider: {fileID: 1447469489}
+  widthSlider: {fileID: 915362328}
+  heightSlider: {fileID: 782146776}
+  depthSlider: {fileID: 1447469490}
   minMassSlider: {fileID: 1002983057}
-  maxMassSlider: {fileID: 1194736797}
-  minStartSpeedSlider: {fileID: 25327876}
-  maxStartSpeedSlider: {fileID: 1398810715}
+  maxMassSlider: {fileID: 1194736798}
+  minStartSpeedSlider: {fileID: 25327877}
+  maxStartSpeedSlider: {fileID: 1398810716}
   gInputField: {fileID: 1361364769}
-  widthTextMesh: {fileID: 1575394035}
-  heightTextMesh: {fileID: 1909714046}
-  depthTextMesh: {fileID: 435498117}
   minMassMesh: {fileID: 472350480}
   maxMassMesh: {fileID: 1039031508}
-  minStartSpeedMesh: {fileID: 473219190}
-  maxStartSpeedMesh: {fileID: 1345960933}
   gMesh: {fileID: 2099815412}
 --- !u!1 &1741542564
 GameObject:
@@ -6101,7 +6201,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 782146774}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
